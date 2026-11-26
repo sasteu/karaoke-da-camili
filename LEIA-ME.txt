@@ -1,0 +1,45 @@
+KARAOKÊ EM CASA
+
+NOVO: KARAOKÊ WEB
+  Dê dois cliques em Abrir-Karaoke-Web.cmd.
+  No Chrome ou Edge, abra http://localhost:8787.
+  Ative o microfone, informe seu nome e toque em reproduzir.
+  O botão Controle pelo celular mostra o endereço para o Wi-Fi de casa.
+  Instruções completas: web-karaoke\README.md
+
+CRIADOR DE MÚSICAS (FERRAMENTA SEPARADA)
+
+Para abrir o programa:
+  Dê dois cliques em Abrir-Criador.cmd nesta pasta.
+  Use esse atalho para preservar os caminhos locais dos modelos e das músicas.
+
+Programa: Ultrastar Creator Tool 5.0.0
+Origem: https://github.com/retotito/UltrastarCreatorTool
+Código disponível em: UltrastarCreatorTool
+Branch local para futuras alterações: codex/teste-karaoke
+
+Organização:
+  runtime     — aplicativo oficial extraído do MSI, sem instalação no sistema
+  dados       — sessões, modelos e arquivos de trabalho
+  musicas     — músicas exportadas para o UltraStar Deluxe
+  downloads   — instalador oficial e registros do teste
+
+Música de teste:
+  Detonautas — Outro Lugar
+  https://www.youtube.com/watch?v=8zsZ3Ql8x7o
+  Sessão: ab2d49c9
+
+Para preparar outra música:
+  1. Abra Create New Song e cole o link do YouTube.
+  2. Confira artista, título e idioma; títulos de vídeos podem inverter os nomes.
+  3. Extraia a voz e procure a letra, ou use a transcrição automática.
+  4. Confira se a letra corresponde à gravação escolhida.
+  5. Gere as notas e revise a sincronização no editor.
+  6. Exporte a pasta e adicione-a à biblioteca do UltraStar Deluxe.
+
+Este aplicativo prepara as músicas. Para jogar e pontuar sua voz, use o
+UltraStar Deluxe com microfone. O resultado automático pode exigir revisão.
+
+O inicializador mantém os dados nesta pasta e ajusta o perfil somente do
+processo do aplicativo, para que o verificador encontre o cache dos modelos.
+Ele não altera as variáveis de ambiente permanentes do Windows.

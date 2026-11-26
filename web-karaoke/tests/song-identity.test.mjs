@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {identifySong} from '../song-identity.mjs';
+test('A catalog match corrects a video title in song-artist order',()=>{const result=identifySong({artist:'Outro Lugar',title:'Detonautas',duration:234},[{artist:'Detonautas',track:'Outro Lugar',duration:234}]);assert.equal(result.artist,'Detonautas');assert.equal(result.title,'Outro Lugar');assert.equal(result.identityVerified,true);});
+test('A normal artist-title match accepts case and video labels',()=>{const result=identifySong({artist:'Autor',title:'Coração (Official Video)'},[{artist:'AUTOR',track:'Coração'}]);assert.equal(result.artist,'AUTOR');assert.equal(result.title,'Coração');assert.equal(result.identityVerified,true);});
+test('An ambiguous or unrelated catalog result is not treated as confirmation',()=>{const suggestion={artist:'Luz',title:'Mar'};assert.equal(identifySong(suggestion,[{artist:'Outro artista',track:'Outro lugar'}]).identityVerified,false);const result=identifySong(suggestion,[{artist:'Luz',track:'Mar'},{artist:'Mar',track:'Luz'}]);assert.equal(result.identityVerified,false);assert.equal(result.artist,'Luz');assert.equal(identifySong(suggestion,[]).title,'Mar');});
